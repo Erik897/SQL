@@ -1,0 +1,19 @@
+CREATE TABLE pet_store (id INTEGER PRIMARY KEY, pet TEXT, price INTEGER, sold INTEGER,inventory INTEGER, netincome INTEGER);
+
+INSERT INTO pet_store VALUES (1, "dog", 200, 20,30,4000);
+INSERT INTO pet_store VALUES (2, "birds", 50,6,12,300);
+INSERT INTO pet_store VALUES (3, "fish", 15,400,1000, 6000);
+INSERT INTO pet_store VALUES (4, "reptile", 25, 5,18,125 );
+INSERT INTO pet_store VALUES (5, "hamster", 10,37,60,370);
+
+SELECT * FROM pet_store;
+
+SELECT * FROM pet_store
+ORDER BY price desc;
+
+SELECT * FROM pet_store 
+WHERE netincome <=500; 
+
+SELECT * FROM pet_store 
+WHERE sold <=50
+ORDER BY price;
