@@ -1,0 +1,36 @@
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY, fullname TEXT, age INTEGER, job_title TEXT);
+
+INSERT INTO movie_stars (fullname, age, job_title)
+VALUES ("leonardo dicaprio", 47, "actor");
+INSERT INTO movie_stars (fullname, age, job_title)
+VALUES ("Brad Pitt", 58, "actor");
+INSERT INTO movie_stars (fullname, age, job_title)
+VALUES ("Johnny Depp", 58, "actor");
+INSERT INTO movie_stars (fullname, age,job_title)
+VALUES ("Tom Hardy", 44, "actor");
+INSERT INTO movie_stars (fullname, age,job_title)
+VALUES ("shia labeouf", 35, "actor");
+
+
+CREATE TABLE Profession (id INTEGER , genre TEXT, movie_title TEXT, awards INTEGER);
+
+INSERT INTO Profession VALUES (1, "Drama", "The wolf of wall street", 101);
+INSERT INTO Profession VALUES (1, "Drama", "Shutter Island",101);
+INSERT INTO Profession VALUES (2, "Action","Fight Club",52);
+INSERT INTO Profession VALUES (2,"Action", "Troy",52);
+INSERT INTO Profession VALUES (3, "Action", "Once upon a time in mexico", 26);
+INSERT INTO Profession VALUES (3, "Action", "Pirates of the Caribbean", 26);
+INSERT INTO Profession VALUES (4, "Drama", "Venom", 7);
+INSERT INTO Profession VALUES (4, "Action", "Warrior", 7);
+INSERT INTO Profession VALUES (5, "Drama", "Lawless",6);
+INSERT INTO Profession VALUES (5, "Action","Fury",6);
+
+SELECT a.id, a.fullname, b.id, b.genre, b.movie_title FROM movie_stars as a
+ JOIN profession as b ON a.id = b.id GROUP BY movie_title order by a.id asc;
+
+SELECT * FROM movie_stars;
+
+SELECT * FROM profession
+WHERE "awards" < 60  ORDER BY "awards" desc;
+
+SELECT MAX(awards) FROM profession;
